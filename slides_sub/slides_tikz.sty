@@ -1,0 +1,37 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{physsummer_tikz}
+
+\RequirePackage{tikz}
+\RequirePackage{pgfplots}
+\RequirePackage{wrapfig}
+\RequirePackage{subfig}
+
+
+
+\usetikzlibrary{
+	arrows,
+	calc,
+	patterns,
+	intersections,
+    backgrounds,
+    trees,
+    mindmap,
+	decorations.pathreplacing,
+	decorations.pathmorphing,
+	decorations.text,
+	decorations.markings,
+	shapes,
+	positioning
+}
+
+
+\pgfplotsset{compat = newest}
+
+
+
+\tikzstyle{dotnode} = [draw, fill, inner sep = 0pt, minimum size = 1mm, circle]
+
+\tikzstyle{termnode} = [draw, fill = white, inner sep = 0pt, minimum size = 1.5mm, circle]
+
+
+\endinput
