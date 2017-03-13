@@ -1,10 +1,11 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{physsummer_tikz}
+\ProvidesPackage{slides_tikz}
 
 \RequirePackage{tikz}
 \RequirePackage{pgfplots}
 \RequirePackage{wrapfig}
 \RequirePackage{subfig}
+\RequirePackage{tikzpeople}
 
 
 
@@ -32,6 +33,7 @@
 \tikzstyle{dotnode} = [draw, fill, inner sep = 0pt, minimum size = 1mm, circle]
 
 \tikzstyle{termnode} = [draw, fill = white, inner sep = 0pt, minimum size = 1.5mm, circle]
+
 
 \pgfdeclaredecoration{pencildec}{initial}{
 	\state{initial}[
@@ -71,6 +73,39 @@
     }
 ]
 
+\RequirePackage{etextools}
 
+\makeatletter
+
+% define a macro after current iteration
+\newcommand\afteriterationdef[1]{\aftergroup@def#1}
+
+% define a macro after foreach (and after iteration)
+\newcommand\afterforeachdef[1]{\afteriterationdef{#1}\AfterGroup{\aftergroup@def#1}}
+
+\makeatother
+
+\newcommand{\defineop}[1]{
+    \foreach \index in {1, ..., #1}{
+%        \onslide<1->{
+            \message{!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! op\index}
+            \afterforeachdef\tikzstyle{op\index} = [opacity = 0]
+ %       }
+  %      \only<\index->{\tikzstyle{op\index} = [opacity = 1]}
+    }
+}
+
+\newcommand{\definee}[1]{
+    \tmp=0
+    \loop
+	    \advance\tmp by 1
+    	\onslide<1->{
+            \message{!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! op\index}
+			\tikzstyle{op\index} = [opacity = 0]
+        }
+        \only<\index->{\tikzstyle{op\index} = [opacity = 1]}
+        \ifnum\tmp<#1
+    \repeat
+}
 
 \endinput
