@@ -6,31 +6,31 @@
 
 % if pdflatex, then
 \ifpdf
-	\RequirePackage[utf8]{inputenc}
-	\RequirePackage[T2A]{fontenc}
-	\RequirePackage[english]{babel}
-	\RequirePackage{hyperref}
-
+    \RequirePackage[utf8]{inputenc}
+    \RequirePackage[T2A]{fontenc}
+    \RequirePackage[english]{babel}
+    \RequirePackage{hyperref}
+    
     \hypersetup{
-      colorlinks = true,
-      urlcolor = blue
+        colorlinks = true,
+        urlcolor = blue
     }
-\else % if xelatex, then
-	\RequirePackage{unicode-math}
+%\else % if xelatex, then
+%	\RequirePackage{unicode-math}
 	%\usepackage{fouriernc}
 	% xelatex specific packages
-	\RequirePackage[xetex]{hyperref}
-	\RequirePackage{xltxtra} % \XeLaTeX macro
-	\RequirePackage{xunicode} % some extra unicode support
-	\defaultfontfeatures{Mapping = tex-text}
-	\RequirePackage{polyglossia} % instead of babel in xelatex
-	\RequirePackage{indentfirst} %
-	\setdefaultlanguage[spelling = modern]{russian}
-	\setotherlanguage{english} %% объявляет второй язык документа
-	\newfontfamily\cyrillicfont{Linux Libertine}
-	\setmainfont{Linux Libertine}
-	\setmonofont{Consolas}
-	\setsansfont{CMU Sans Serif}
-	\setmathfont{Cambria Math}
+%	\RequirePackage[xetex]{hyperref}
+%	\RequirePackage{xltxtra} % \XeLaTeX macro
+%	\RequirePackage{xunicode} % some extra unicode support
+%	\defaultfontfeatures{Mapping = tex-text}
+%	\RequirePackage{polyglossia} % instead of babel in xelatex
+%	\RequirePackage{indentfirst} %
+%	\setdefaultlanguage[spelling = modern]{russian}
+%	\setotherlanguage{english} %% объявляет второй язык документа
+%	\newfontfamily\cyrillicfont{Linux Libertine}
+%	\setmainfont{Linux Libertine}
+%	\setmonofont{Consolas}
+%	\setsansfont{CMU Sans Serif}
+%	\setmathfont{Cambria Math}
 \fi
 \endinput
