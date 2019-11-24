@@ -1,108 +1,58 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{slides_comm}
 
+\let\C\undefined
+\let\G\undefined
+\RequirePackage{complexity}
 
-
-\newcommand{\class}[1]{\mathbf{#1}}
-\newcommand{\co}{\mathrm{co}}
 \newcommand{\alg}[1]{\mathrm{#1}}
-\newcommand{\lang}[1]{\mathtt{#1}}
-
-
-% classes (1)
-
-\newcommand{\DTime}{\class{DTime}}
-\newcommand{\RTime}{\class{RTime}}
-\newcommand{\UTime}{\class{UTime}}
-\newcommand{\NTime}{\class{NTime}}
-\newcommand{\BPTime}{\class{BPTime}}
-
-
-\renewcommand{\P}{\class{P}}
-\newcommand{\ZPP}{\class{ZPP}}
-\newcommand{\RP}{\class{RP}}
-\newcommand{\coRP}{\co\class{RP}}
-\newcommand{\UP}{\class{UP}}
-\newcommand{\coUP}{\co\class{UP}}
-\newcommand{\NP}{\class{NP}}
-\newcommand{\coNP}{{\co}\class{NP}}
-\newcommand{\NE}{\class{NE}}
-\newcommand{\BPP}{\class{BPP}}
-\newcommand{\BPL}{\class{BPL}}
-\newcommand{\SigmaP}[1]{\Sigma^{#1}\class{P}}
-\newcommand{\PH}{\class{PH}}
-\newcommand{\PP}{\class{PP}}
-\newcommand{\IP}{\class{IP}}
-\newcommand{\OP}{\class{\oplus P}}
-
-
-\newcommand{\Ll}{\class{L}}
-\newcommand{\NL}{\class{NL}}
-\newcommand{\EXP}{\class{EXP}}
-\newcommand{\MIP}{\class{MIP}}
-\newcommand{\NEXP}{\class{NEXP}}
-\newcommand{\coNEXP}{{\co}\class{NEXP}}
-\newcommand{\MAEXP}{\class{MA}_\class{EXP}}
-
-
-% classes (2)
-
-\newcommand{\Size}{\class{SIZE}}
-\newcommand{\Ppoly}{\class{P}/\class{poly}}
-\newcommand{\NC}{\class{NC}}
-
-
-\newcommand{\DSpace}{\class{DSpace}}
-\newcommand{\NSpace}{\class{NSpace}}
-\newcommand{\PSpace}{\class{PSPACE}}
-\newcommand{\NPSpace}{\class{NPSPACE}}
-
-\newcommand{\EXPSPACE}{\class{EXPSPACE}}
-
-\newcommand{\AM}{\class{AM}}
-\newcommand{\MA}{\class{MA}}
-\newcommand{\MAM}{\class{MAM}}
-\newcommand{\PCP}{\class{PCP}}
-
 
 % algorithms and proof systems
 
 
 \newcommand{\DPLL}{\alg{DPLL}}
-\newcommand{\OBDD}{\alg{OBDD}}
-\newcommand{\oOBDD}{\text{-}\alg{OBDD}}
-\newcommand{\pOBDD}{\pi\text{-}\alg{OBDD}}
-\newcommand{\DPLLL}{\alg{DPLL}_{lin}}
-\newcommand{\Res}{\alg{Res}}
-\newcommand{\ResL}{\alg{Res}_{lin}}
-\newcommand{\SemL}{\alg{Sem}_{lin}}
-\newcommand{\CP}{\alg{CP}}
-\newcommand{\LS}{\alg{LS}}
-\newcommand{\NS}{\alg{NS}}
-\newcommand{\CC}{\alg{CC}}
+\newcommand{\CDCL}{\alg{CDCL}}
 
+
+\newcommand{\ResL}{\alg{Res(\oplus)}}
+\newcommand{\SemL}{\alg{Sem(\oplus)}}
+\renewcommand{\CP}{\alg{CP}}
+
+\newcommand{\NS}{\alg{NS}}
+\newcommand{\LK}{\alg{LK}}
+\newcommand{\Th}{\alg{Th}}
+
+
+\newcommand{\Vars}{\mathrm{Vars}}
+\newcommand{\Split}[1]{\mathrm{Split}_{#1}}
+\newcommand{\xdeg}{\mathrm{x\text{-}deg}}
+
+
+% proof systems
+\newcommand{\PrSys}[1]{\alg{#1}}
+\newcommand{\PCR}[1][\mathbb{R}]{\PrSys{PCR}^{#1}}
+\newcommand{\PCRb}[1][\mathbb{R}]{\PCR[#1]_{\{0, 1\}}}
+\newcommand{\PCRf}[1][\mathbb{R}]{\PCR[#1]_{\{\pm 1\}}}
+\newcommand{\SOS}{\PrSys{SOS}}
+\newcommand{\SOSb}{\SOS_{\{0, 1\}}}
+\newcommand{\SOSf}{\SOS_{\{\pm 1\}}}
+\newcommand{\Res}{\PrSys{Res}}
 
 % languages
 
+\newlang{\EQ}{\lang{EQ}}
+\newlang{\Ind}{\lang{Ind}}
+\newlang{\KWm}{\lang{KW}^m}
+\newlang{\Search}{\lang{Search}}
+\newlang{\Parity}{\lang{Parity}}
+\newlang{\PHP}{\lang{PHP}}
+\newlang{\GPHP}{\lang{G\text{-}PHP}}
+\newlang{\GFPHP}{\lang{G\text{-}FPHP}}
+\newlang{\GNI}{\lang{GNI}}
+\newlang{\MAJ}{\lang{MAJ}}
+\newlang{\msize}{\lang{MSize}}
+\renewlang{\deg}{\lang{deg}}
 
-\newcommand{\SAT}{\lang{SAT}}
-\newcommand{\GNI}{\lang{GNI}}
-\newcommand{\MAJSAT}{\lang{MAJ}\text{-}\lang{SAT}}
-\newcommand{\QBF}{\lang{QBF}}
-\newcommand{\USAT}{\lang{USAT}}
-\newcommand{\MaxkSAT}{\lang{Max}\text{-}3\text{-}\lang{SAT}}
-\newcommand{\BMS}{\lang{BMS}}
-\newcommand{\KWm}{\lang{KW}^m}
-\newcommand{\Search}{\lang{Search}}
-\newcommand{\Next}{\lang{Next}}
-\newcommand{\EQ}{\lang{EQ}}
-\newcommand{\CSPSAT}{\lang{CSP}\text{-}\lang{SAT}}
-\newcommand{\PHP}{\lang{PHP}}
-\newcommand{\TS}{\lang{TS}}
-\newcommand{\CSP}{\lang{CSP}}
-\newcommand{\UNSAT}{\lang{UNSAT}}
-\newcommand{\Ind}{\lang{Ind}}
-\newcommand{\CliCol}{\lang{Clique\text{-}Coloring}}
 
 
 
@@ -116,7 +66,6 @@
 \newcommand{\reordering}{\mathrm{reordering}}
 \newcommand{\weakening}{\mathrm{weakening}}
 
-\newcommand{\poly}{\mathrm{poly}}
 \newcommand{\Nat}{\mathbb{N}}
 \newcommand{\bool}{\{0, 1\}}
 

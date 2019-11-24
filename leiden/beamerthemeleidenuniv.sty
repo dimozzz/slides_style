@@ -1,6 +1,5 @@
 \mode<presentation>
 
-\newtranslation[to=English]{Discover the world at Leiden University}{Discover the world at Leiden University} %Typo: word -> world
 \DeclareOptionBeamer{style}{
     \PassOptionsToPackage{style=#1}{beamercolorthemeleidenuniv}
 }
@@ -16,24 +15,24 @@
 \usepackage{fontspec}
 \IfFontExistsTF{Vestula}{
 	\setsansfont{Vestula}
-	}{
-	\IfFontExistsTF{Minion}{
+}{
+    \IfFontExistsTF{Minion}{
 		\setsansfont{Minion}
-		}{
-		}
+	}{
 	}
+}
 \usefonttheme{professionalfonts}
 
-\setbeamerfont{frametitle}{series=\bfseries}
-\setbeamerfont{framesubtitle}{series=\mdseries}
-\setbeamerfont{title}{series=\bfseries,size=\huge}
-\setbeamerfont{subtitle}{series=\mdseries}
+\setbeamerfont{frametitle}{series = \bfseries}
+\setbeamerfont{framesubtitle}{series = \mdseries}
+\setbeamerfont{title}{series = \bfseries, size = \huge}
+\setbeamerfont{subtitle}{series = \mdseries}
 
 \setbeamertemplate{footline}{%
 	\leavevmode
 	\begin{beamercolorbox}[wd=.85\paperwidth,ht=2.25ex,dp=1ex,left]{section in head/foot}
 		\usebeamerfont{section in head/foot}
-		{\hskip3ex \translate{Discover the world at Leiden University}}
+		{\hskip3ex \insertshorttitle}
 	\end{beamercolorbox}%
 	\begin{beamercolorbox}[wd=.15\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}
 		\usebeamerfont{date in head/foot}
