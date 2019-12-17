@@ -1,0 +1,26 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{slides-fonts}
+
+
+\RequirePackage{ifpdf}
+
+\ifpdf
+    \RequirePackage[utf8]{inputenc}
+    \RequirePackage[T2A]{fontenc}
+    \RequirePackage[english]{babel}
+    \RequirePackage{hyperref}
+    
+    \hypersetup{
+        colorlinks = true,
+        urlcolor = blue
+    }
+\else
+    \RequirePackage{unicode-math}    
+    \RequirePackage{xltxtra}
+    \defaultfontfeatures{Mapping = tex-text}
+    %\RequirePackage{polyglossia}
+    %\setdefaultlanguage[spelling = modern]{russian}
+    %\setotherlanguage{english}
+    % настройка шрифтов для XeLaTeX происходит тут
+\fi
+\endinput
