@@ -15,12 +15,20 @@
         urlcolor = blue
     }
 \else
-    \RequirePackage{unicode-math}    
+%    \RequirePackage{unicode-math}    
     \RequirePackage{xltxtra}
     \defaultfontfeatures{Mapping = tex-text}
-    %\RequirePackage{polyglossia}
-    %\setdefaultlanguage[spelling = modern]{russian}
-    %\setotherlanguage{english}
-    % настройка шрифтов для XeLaTeX происходит тут
+    \RequirePackage{fontspec}
+    \IfFontExistsTF{Minion Pro}{
+        \setsansfont{Minion Pro}
+	}{
+	}
+
+    \usefonttheme{professionalfonts}
+
+    \setbeamerfont{frametitle}{series = \bfseries}
+    \setbeamerfont{framesubtitle}{series = \mdseries}
+    \setbeamerfont{title}{series = \bfseries, size = \huge}
+    \setbeamerfont{subtitle}{series = \mdseries}
 \fi
 \endinput

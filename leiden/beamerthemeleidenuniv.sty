@@ -1,7 +1,7 @@
 \mode<presentation>
 
 \DeclareOptionBeamer{style}{
-    \PassOptionsToPackage{style =#1}{beamercolorthemeleidenuniv}
+    \PassOptionsToPackage{style = #1}{beamercolorthemeleidenuniv}
 }
 \RequirePackage{babel}
 \ExecuteOptionsBeamer{style = blue}
@@ -11,22 +11,7 @@
 \usecolortheme{rose}
 %\useoutertheme{infolines}
 \useinnertheme{default}
-%Set fonts if they are installed
-\usepackage{fontspec}
-%\IfFontExistsTF{Vestula}{
-%	\setsansfont{Vestula}
-%}{
-%    \IfFontExistsTF{Minion}{
-%		\setsansfont{Minion}
-%	}{
-%	}
-%}
-\usefonttheme{professionalfonts}
 
-\setbeamerfont{frametitle}{series = \bfseries}
-\setbeamerfont{framesubtitle}{series = \mdseries}
-\setbeamerfont{title}{series = \bfseries, size = \huge}
-\setbeamerfont{subtitle}{series = \mdseries}
 
 \setbeamertemplate{footline}{%
     \leavevmode

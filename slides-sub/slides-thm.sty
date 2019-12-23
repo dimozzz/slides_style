@@ -1,0 +1,140 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{slides-thm}
+
+\RequirePackage[skins, many]{tcolorbox}
+\RequirePackage{etoolbox}
+\tcbuselibrary{theorems}
+
+
+\tcbset{%
+    theo/.style = {%
+        enhanced,
+%        colframe = #1!80!black,
+        colback = #1!5,
+        arc = 0pt,
+        attach boxed title to top left = {
+            yshift = -2mm,
+            xshift = 0.5cm
+        },
+        colbacktitle = #1!15,
+        coltitle = LEIblue,
+        fonttitle = \bfseries,
+        boxed title style = {arc = 0pt}
+    }
+} 
+
+
+\newtheorem{conjecture}{Гипотеза}[section]
+\newtheorem{proposition}{Утверждение}[section]
+\newtheorem{exercise}{Упражнение}[section]
+%\newtheorem{example}{Пример}[section]
+\newtheorem{remark}{Замечание}[section]
+
+\makeatletter
+\renewtcolorbox{block}[1]{
+    enhanced,
+    theo = {LEIblue},
+    title = {#1},
+    before upper = {\protected@edef\@currentlabel{\csname p@theorem\endcsname\csname thetcbcounter\endcsname}}
+}
+\makeatother
+
+\makeatletter
+\renewtcolorbox[use counter = theorem, number within = section]{theorem}[1][]{
+    enhanced,
+    theo = {LEIblue},
+    title = {Theorem},
+    before upper = {\protected@edef\@currentlabel{\csname p@theorem\endcsname\csname thetcbcounter\endcsname}}
+}
+\makeatother
+
+\makeatletter
+\renewtcolorbox[use counter = theorem, number within = section]{definition}[1][]{
+    enhanced,
+    theo = {blue},
+    title = {Definition #1},
+    before upper = {\protected@edef\@currentlabel{\csname p@definition\endcsname\csname thetcbcounter\endcsname}}
+}
+\makeatother
+
+
+\makeatletter
+\renewtcolorbox[use counter = theorem, number within = section]{conjecture}[1][]{
+    enhanced,
+    theo = {blue},
+    title = {Гипотеза \thetcbcounter\ #1},
+    before upper = {\protected@edef\@currentlabel{\csname p@conjecture\endcsname\csname thetcbcounter\endcsname}}
+}
+\makeatother
+
+
+\makeatletter
+\renewtcolorbox[use counter = theorem, number within = section]{lemma}[1][]{
+    enhanced,
+    theo = {LEIblue},
+    title = {Lemma\ #1},
+    before upper = {\protected@edef\@currentlabel{\csname p@lemma\endcsname\csname thetcbcounter\endcsname}}
+}
+\makeatother
+
+
+\makeatletter
+\renewtcolorbox[use counter = theorem, number within = section]{corollary}[1][]{
+    enhanced,
+    theo = {blue},
+    title = {Следствие \thetcbcounter\ #1},
+    before upper = {\protected@edef\@currentlabel{\csname p@corollary\endcsname\csname thetcbcounter\endcsname}}
+}
+\makeatother
+
+
+\makeatletter
+\renewtcolorbox[use counter = theorem, number within = section]{proposition}[1][]{
+    enhanced,
+    theo = {blue},
+    title = {Утверждение \thetcbcounter\ #1},
+    before upper = {\protected@edef\@currentlabel{\csname p@proposition\endcsname\csname thetcbcounter\endcsname}}
+}
+\makeatother
+
+
+\makeatletter
+\renewtcolorbox[use counter = theorem, number within = section]{exercise}[1][]{
+    enhanced,
+    theo = {blue},
+    title = {Упражнение \thetcbcounter\ #1},
+    before upper = {\protected@edef\@currentlabel{\csname p@exercise\endcsname\csname thetcbcounter\endcsname}}
+}
+\makeatother
+
+\makeatletter
+\renewtcolorbox[use counter = theorem, number within = section]{example}[1][]{
+    enhanced,
+    theo = {blue},
+    title = {Пример \thetcbcounter\ #1},
+    before upper = {\protected@edef\@currentlabel{\csname p@example\endcsname\csname thetcbcounter\endcsname}}
+}
+\makeatother
+
+
+\makeatletter
+\renewtcolorbox[use counter = theorem, number within = section]{remark}[1][]{
+    enhanced,
+    theo = {blue},
+    title = {Замечание \thetcbcounter\ #1},
+    before upper = {\protected@edef\@currentlabel{\csname p@remark\endcsname\csname thetcbcounter\endcsname}}
+}
+\makeatother
+
+
+
+
+\renewenvironment{proof}{
+    \textbf{Доказательство.}
+}{
+    \hfill
+    $\square$
+    \vspace{0.01cm}
+}
+    
+\endinput
