@@ -15,16 +15,26 @@
         urlcolor = blue
     }
 \else
-%    \RequirePackage{unicode-math}    
+ %   \let\mathbbtemp\mathbb
+  %  \RequirePackage{unicode-math}
+   % \let\mathbb\mathbbtemp
+
+    \RequirePackage[no-math]{fontspec}
     \RequirePackage{xltxtra}
-    \defaultfontfeatures{Mapping = tex-text}
-    \RequirePackage{fontspec}
+%    \defaultfontfeatures{Mapping = tex-text}
+
     \IfFontExistsTF{Minion Pro}{
         \setsansfont{Minion Pro}
+    %    \setmathfont{texgyrepagella-math.otf}
+%        \setmathfont{TeX Gyre Pagella Math} 
+ %       \setmathfont{Asana Math}
+%        \setmathfont{Asana Math}
 	}{
 	}
 
     \usefonttheme{professionalfonts}
+
+
 
     \setbeamerfont{frametitle}{series = \bfseries}
     \setbeamerfont{framesubtitle}{series = \mdseries}

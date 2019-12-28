@@ -31,11 +31,25 @@
 \newtheorem{remark}{Замечание}[section]
 
 \makeatletter
-\renewtcolorbox{block}[1]{
+\newtcolorbox{blockpic}[2]{
     enhanced,
     theo = {LEIblue},
     title = {#1},
-    before upper = {\protected@edef\@currentlabel{\csname p@theorem\endcsname\csname thetcbcounter\endcsname}}
+    overlay = {
+        \node[inner sep = 0pt] at (frame.north east){
+            \begin{tikzpicture}
+                {#2}
+            \end{tikzpicture}
+        };
+    }
+}
+\makeatother
+
+\makeatletter
+\renewtcolorbox{block}[1]{
+    enhanced,
+    theo = {LEIblue},
+    title = {#1}
 }
 \makeatother
 
