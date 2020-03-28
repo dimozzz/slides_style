@@ -23,6 +23,8 @@
     \end{beamercolorbox}
 }
 
+\newcommand{\comm}[1]{}
+
 \defbeamertemplate*{title page}{leidenuniv}[1][]{
     \vspace{-2pt}
     \begin{beamercolorbox}[wd = \paperwidth, ht = 0.6\paperheight, left, sep = 1ex]{title}
@@ -39,12 +41,12 @@
     \end{beamercolorbox}
     \vfill
     \begin{beamercolorbox}[wd = \paperwidth, left, sep = 0.1ex]{date}
-        \begin{minipage}[t]{0.33\paperwidth}
+        \begin{minipage}[t]{0.48\paperwidth}
             \centering \includegraphics[height = 0.28\paperheight]{lu-logo.png}
         \end{minipage}
-        \begin{minipage}[t]{0.33\paperwidth}
+        \begin{minipage}[t]{0.48\paperwidth}
             \centering \includegraphics[height = 0.28\paperheight]{ku-logo.png}
-        \end{minipage}
+        \end{minipage}    \comm{
         \begin{minipage}[t]{0.32\paperwidth}
             \centering
             \begin{tikzpicture}
@@ -52,7 +54,7 @@
                 \node at (0, 0.4) {\usebeamerfont{title}RAS};
                 \node at (0, -0.5) {};
             \end{tikzpicture}
-        \end{minipage}        
+        \end{minipage}  }      
 	\end{beamercolorbox}
 }
 \mode
