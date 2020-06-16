@@ -1,81 +1,9 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{slides-comm}
 
-\let\C\undefined
-\let\G\undefined
-\RequirePackage[langfont = typewriter]{complexity}
-
-\newcommand{\alg}[1]{\mathtt{#1}}
-
-% algorithms and proof systems
-
-
-\newcommand{\DPLL}{\alg{DPLL}}
-\newcommand{\CDCL}{\alg{CDCL}}
-
-
-\newcommand{\ResL}{\alg{Res(\oplus)}}
-\newcommand{\SemL}{\alg{Sem(\oplus)}}
-\renewcommand{\CP}{\alg{CP}}
-
-\newcommand{\NS}{\alg{NS}}
-\newcommand{\LK}{\alg{LK}}
-\newcommand{\Th}{\alg{Th}}
-
-
-\newcommand{\Vars}{\mathtt{Vars}}
-\newcommand{\Split}[1]{\mathtt{Split}_{#1}}
-\newcommand{\xdeg}{\mathtt{x\text{-}deg}}
-
-
-% proof systems
-\newcommand{\PrSys}[1]{\alg{#1}}
-\newcommand{\PCR}[1][\mathbb{R}]{\PrSys{PCR}^{#1}}
-\newcommand{\PCRb}[1][\mathbb{R}]{\PCR[#1]_{\{0, 1\}}}
-\newcommand{\PCRf}[1][\mathbb{R}]{\PCR[#1]_{\{\pm 1\}}}
-\newcommand{\SOS}{\PrSys{SOS}}
-\newcommand{\SOSb}{\SOS_{\{0, 1\}}}
-\newcommand{\SOSf}{\SOS_{\{\pm 1\}}}
-\newcommand{\Res}{\PrSys{Res}}
-
-% languages
-
-\newlang{\EQ}{\lang{EQ}}
-\newlang{\Ind}{\lang{Ind}}
-\newlang{\KW}{\lang{KW}}
-\newlang{\KWm}{\lang{KW}^m}
-\newlang{\Search}{\lang{Search}}
-\newlang{\Parity}{\lang{Parity}}
-\newlang{\PHP}{\lang{PHP}}
-\newlang{\GPHP}{\lang{G\text{-}PHP}}
-\newlang{\GFPHP}{\lang{G\text{-}FPHP}}
-\newlang{\GNI}{\lang{GNI}}
-\newlang{\MAJ}{\lang{MAJ}}
-\newlang{\msize}{\lang{MSize}}
-\renewlang{\deg}{\lang{deg}}
-
-
-
-
-% other
-
 \newcommand\rbox[1]{
 	\tikz\node[rounded corners, align = center] {#1};
 }
-
-
-\newcommand{\reordering}{\mathrm{reordering}}
-\newcommand{\weakening}{\mathrm{weakening}}
-
-\newcommand{\Nat}{\mathbb{N}}
-\newcommand{\bool}{\{0, 1\}}
-
-\newcommand{\Img}{\mathop{\mathrm{Im}}}
-
-\DeclareMathOperator*{\supp}{supp}
-\DeclareMathOperator*{\Exp}{E}
-\DeclareMathOperator*{\rk}{rk}
-
 
 \newcolumntype{?}[1]{!{\mycolor{black}{\vrule width #1}}}
 \newcolumntype{Y}{>{\centering\arraybackslash}X}
