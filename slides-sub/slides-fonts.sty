@@ -18,10 +18,13 @@
 
     \RequirePackage[no-math]{fontspec}
     \RequirePackage{xltxtra}
-    % \defaultfontfeatures{Mapping = tex-text}
+    \defaultfontfeatures{Mapping = tex-text}
+    \RequirePackage{polyglossia}
+    \setdefaultlanguage{english}
 
     \IfFontExistsTF{Minion Pro}{
         \setsansfont{Minion Pro}
+        \newfontfamily{\cyrillicfont}{Minion Pro}
 	}{
 	}
 
