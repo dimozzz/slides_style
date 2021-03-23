@@ -51,7 +51,7 @@
 \renewtcolorbox{theorem}[1][]{
     enhanced,
     theo = {LEIblue},
-    title = {Theorem\ifthenelse{\equal{#1}{}}{}{[{#1}]}}
+    title = {\translateword{Theorem}{Теорема}\ifthenelse{\equal{#1}{}}{}{[{#1}]}}
 }
 \makeatother
 
@@ -59,7 +59,7 @@
 \renewtcolorbox{definition}[1][]{
     enhanced,
     theo = {blue},
-    title = {Definition\ifthenelse{\equal{#1}{}}{}{[{#1}]}}
+    title = {\translateword{Definition}{Определение}\ifthenelse{\equal{#1}{}}{}{[{#1}]}}
 }
 \makeatother
 
@@ -68,7 +68,7 @@
 \newtcolorbox{conjecture}[1][]{
     enhanced,
     theo = {blue},
-    title = {Conjecture\ifthenelse{\equal{#1}{}}{}{[{#1}]}}
+    title = {\translateword{Conjecture}{Гипотеза}\ifthenelse{\equal{#1}{}}{}{[{#1}]}}
 }
 \makeatother
 
@@ -77,7 +77,7 @@
 \renewtcolorbox{lemma}[1][]{
     enhanced,
     theo = {LEIblue},
-    title = {Lemma\ifthenelse{\equal{#1}{}}{}{[{#1}]}}
+    title = {\translateword{Lemma}{Лемма}\ifthenelse{\equal{#1}{}}{}{[{#1}]}}
 }
 \makeatother
 
@@ -85,8 +85,8 @@
 \makeatletter
 \renewtcolorbox{corollary}[1][]{
     enhanced,
-    theo = {blue},
-    title = {Corollary\ifthenelse{\equal{#1}{}}{}{[{#1}]}}
+    theo = {LEIblue},
+    title = {\translateword{Corollary}{Следствие}\ifthenelse{\equal{#1}{}}{}{[{#1}]}}
 }
 \makeatother
 
@@ -94,8 +94,8 @@
 \makeatletter
 \newtcolorbox{proposition}[1][]{
     enhanced,
-    theo = {blue},
-    title = {Proposition\ifthenelse{\equal{#1}{}}{}{[{#1}]}}
+    theo = {LEIblue},
+    title = {\translateword{Proposition}{Утверждение}\ifthenelse{\equal{#1}{}}{}{[{#1}]}}
 }
 \makeatother
 

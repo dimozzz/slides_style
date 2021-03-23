@@ -1,6 +1,8 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{slides-comm}
 
+\RequirePackage{xparse}
+
 \newcommand\rbox[1]{
 	\tikz\node[rounded corners, align = center] {#1};
 }
@@ -11,7 +13,17 @@
 \makeatletter
 \def\hlinewd#1{%
 \noalign{\ifnum0=`}\fi\mycolor{black}{\hrule \@height #1} %
-\futurelet\reserved@a\@xhline} 
+\futurelet\reserved@a\@xhline}
+
+\ExplSyntaxOn
+\NewDocumentCommand{\translateword}{mm}{
+    \str_case:onF{\languagename}{
+        {english}{#1}
+        {russian}{#2}
+    }{}
+}
+\ExplSyntaxOff
+
 
 
 \endinput
