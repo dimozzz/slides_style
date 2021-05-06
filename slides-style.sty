@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{slides_style}
+\ProvidesPackage{slides-style}
 
 \RequirePackage{amsmath}
 \RequirePackage{amssymb}
@@ -23,11 +23,16 @@
 
 \RequirePackage{slides-fonts}
 \RequirePackage{slides-colors}
-\RequirePackage{slides-tikz}
+\RequirePackage{mathstyle-tikz}
 \RequirePackage{slides-comm}
 \RequirePackage{slides-thm}
 
 \RequirePackage[MnSymbol]{mathspec}
 \setmathtt[Scale = MatchLowercase]{Luxi Mono}
+
+\tikzset{
+    graph-vert/.default = {LEIblue!40}{0.15cm}
+}
+
 
 \endinput
